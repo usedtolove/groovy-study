@@ -1,8 +1,42 @@
-.gradle
-build/
+# IDEA #
+*.iml
+*.ipr
+*.iws
+**/.idea
+
+# Myeclipse #
+*.classpath
+*.project
+**/.settings
+**/bin
+
+# Maven #
+**/target
+
+
+# Java  #
+*.class
+.mtj.tmp/
+*.jar
+!docs/jars/*.jar
+!trunk/gradle/wrapper/*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# bower #
+#**/bower_components
+#**/bower_components/**/src
+#**/bower_components/bootstrap/less
+#**/node_modules
+
+# grails #
+**/build
+**/.gradle
 
 # Ignore Gradle GUI config
 gradle-app.setting
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
+

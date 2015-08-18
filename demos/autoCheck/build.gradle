@@ -1,0 +1,160 @@
+group 'com.tz'
+version '1.0-SNAPSHOT'
+
+/*allprojects {
+    repositories {
+	    mavenLocal()
+        maven{ url 'http://maven.oschina.net/content/groups/public/'}
+    }
+}*/
+
+//A Gradle plugin that provides Maven-like dependency management functionality
+buildscript {
+    repositories {
+        mavenLocal()
+        maven{ url 'http://maven.oschina.net/content/groups/public/'}
+        jcenter()
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
+
+        //and set VM options for debug usage : -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+//apply plugin: "io.spring.dependency-management"
+apply plugin: 'com.bmuschko.tomcat'
+apply plugin: 'spring-boot'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenLocal()
+    maven{ url 'http://maven.oschina.net/content/groups/public/'}
+    mavenCentral()
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+sourceSets {
+    main {
+        groovy {
+            // override the default locations, rather than adding additional ones
+            srcDirs = ['src/main/groovy', 'src/main/java']
+        }
+        java {srcDirs = []} // don't compile Java code twice
+    }
+    test {
+        groovy {
+//            srcDirs = ['src/test/groovy']
+            srcDirs = ['src/test/java', 'src/test/groovy']
+        }
+        java{
+//            srcDirs = ['src/test/java']
+            srcDirs = []
+        }
+    }
+}
+
+/*dependencyManagement {
+    *//*imports {
+        mavenBom 'org.springframework:spring-framework-bom:4.0.1.RELEASE'
+    }*//*
+    dependencies {
+//        def springbootVersion = '1.2.5.RELEASE'
+        dependencySet(group:'org.springframework.boot',
+                    version: '1.2.5.RELEASE') {
+            entry 'spring-boot-starter'
+            entry 'spring-boot-starter-data-jpa'
+            entry 'spring-boot-starter-web'
+            entry 'spring-boot-starter-test'
+        }
+
+        dependency "org.apache.struts:struts2-convention-plugin:2.3.24"
+
+        dependency "commons-dbcp:commons-dbcp:1.4"
+        dependency "com.h2database:h2:1.3.176"
+        dependency 'org.codehaus.groovy:groovy-all:2.4.4'
+        dependency group:'junit', name:'junit', version:'4.12'
+    }
+}*/
+
+tomcat {
+    httpPort = 18888
+    httpsPort = 18443
+    ajpPort = 18009
+    stopPort = 18081
+}
+tomcatRun.contextPath = '/autoCheck'
+tomcatRun.reloadable = false
+
+//配置忽略的依赖
+configurations {
+    all*.exclude group: 'ch.qos.logback', module: 'logback-classic'
+    all*.exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
+}
+
+dependencies {
+    def springbootVersion = '1.2.5.RELEASE'
+    def struts2Version = '2.3.24'
+    def tomcatVersion = '7.0.55'
+    compile "org.springframework.boot:spring-boot-starter:$springbootVersion"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springbootVersion"
+    compile("org.springframework.boot:spring-boot-starter-web:$springbootVersion"){
+            exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat' //by both name and group
+    }
+    compile "org.springframework.boot:spring-boot-starter-test:$springbootVersion"
+
+//    compile "org.springframework:spring-web:$springbootVersion"
+
+//    compile("org.springframework.boot:spring-boot-starter-logging:$springbootVersion"){
+//        exclude group: 'ch.qos.logback', module: 'logback-classic'
+//    }
+
+    compile "org.apache.struts:struts2-convention-plugin:$struts2Version"
+    compile "org.apache.struts:struts2-spring-plugin:$struts2Version"
+    compile "org.apache.struts:struts2-json-plugin:$struts2Version"
+
+    compile "commons-dbcp:commons-dbcp:1.4"
+    compile 'com.h2database:h2:1.3.176'
+    compile 'org.apache.ant:ant:1.9.4'
+//    compile 'org.codehaus.groovy:groovy-all:2.4.4'
+    compile 'org.codehaus.groovy:groovy-all:2.4.1'
+    compile 'org.slf4j:slf4j-log4j12:1.7.12'
+
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+
+    testCompile 'junit:junit:4.12'
+    testCompile "org.apache.struts:struts2-junit-plugin:$struts2Version"
+    testCompile "javax.servlet.jsp:jsp-api:2.2"
+
+    testRuntime "org.apache.tomcat.embed:tomcat-embed-el:$tomcatVersion"
+
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:$tomcatVersion",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:$tomcatVersion"
+}
+
+task generatePom << {
+    pom {
+        project {
+            inceptionYear '2008'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("$projectDir/pom.xml")
+}
