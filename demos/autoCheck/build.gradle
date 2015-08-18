@@ -1,6 +1,11 @@
 group 'com.tz'
 version '1.0-SNAPSHOT'
 
+defaultTasks 'clean', //清空各种临时文件
+            'war', //打 war 包
+            'test', //单元测试
+            'firefoxTest' //集成测试
+
 //A Gradle plugin that provides Maven-like dependency management functionality
 buildscript {
     repositories {
@@ -49,12 +54,18 @@ sourceSets {
             srcDirs = ['src/main/groovy', 'src/main/java']
         }
         java {srcDirs = []}
+//        resources {
+//            srcDirs = ['src/main/resources']
+//        }
     }
     test {
         groovy {
             srcDirs = ['src/test/java', 'src/test/groovy']
         }
         java{srcDirs = []}
+//        resources {
+//            srcDirs = ['src/test/resources']
+//        }
     }
 }
 
@@ -95,15 +106,20 @@ task itTomcatRun(type: com.bmuschko.gradle.tomcat.tasks.TomcatRun) {
     daemon = true
 }
 
-//用火狐浏览器集成测试
-task firefoxTest (type: Test) {
-    dependsOn 'itTomcatRun'
-//    finalizedBy 'tomcatStop'
-    doFirst {
-        println "run firefoxTest task..."
+//单元测试
+test {
+    include '**/Test*'
+//    include '**/Sit*'
+    testLogging {
+        events "passed","failed","standardError"
     }
+}
 
+//用火狐浏览器集成测试
+task sit (type: Test) {
+//    dependsOn 'itTomcatRun'
     exclude '**/Test*'
+    include '**/Sit*'
 
     testLogging {
         events "passed","failed","standardError"
