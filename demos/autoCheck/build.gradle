@@ -4,7 +4,8 @@ version '1.0-SNAPSHOT'
 defaultTasks 'clean', //清空各种临时文件
             'war', //打 war 包
             'test', //单元测试
-            'firefoxTest' //集成测试
+            'itTomcatRun', //启动tomcat
+            'sit' //集成测试
 
 //A Gradle plugin that provides Maven-like dependency management functionality
 buildscript {
