@@ -38,10 +38,10 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <a href="${path}/clazz/list.action" class="btn btn-primary">
+                    <a id="class_list_btn" href="${path}/clazz/list.action" class="btn btn-primary">
                         <span class="glyphicon glyphicon-th-list">&nbsp;班级列表</span>
                     </a>
-                    <a href="${path}/student/input.action?clazz.id=${clazz.id}" id="student_add_btn" class="btn btn-primary">
+                    <a id="student_add_btn" href="${path}/student/input.action?clazz.id=${clazz.id}" class="btn btn-primary">
                         <span class="glyphicon glyphicon-plus">&nbsp;添加学员</span>
                     </a>
                 </div>

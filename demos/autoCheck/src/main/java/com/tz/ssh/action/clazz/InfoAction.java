@@ -26,7 +26,9 @@ public class InfoAction extends ActionSupport {
     @Override
     public String execute() throws Exception {
         clazz = clazzDao.findOne(clazz.getId());
-        studentList = studentDao.findByClazzId(clazz.getId());
+        if(clazz != null){
+            studentList = studentDao.findByClazzId(clazz.getId());
+        }
         return SUCCESS;
     }
 

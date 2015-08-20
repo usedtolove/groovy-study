@@ -23,6 +23,9 @@ class ClazzListPage extends Page {
         lastRowOpenDate {$("tr:last-child .td_open_date").text()}
         lastRowRoom {$("tr:last-child .td_room").text()}
 
+        //查看按钮不一定存在，设置required:false
+        infoBtn (required: false) {$(".infoBtn", 0)}
+
         //删除按钮不一定存在，设置required:false
         deleteBtn (required: false) {$(".deleteBtn", 0)}
         deleteConfirmModal {$("#deleteConfirmModal")}

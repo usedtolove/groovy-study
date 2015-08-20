@@ -102,7 +102,7 @@
                         <td class="td_open_date"><s:date name="openDate" format="yyyy-MM-dd"/></td>
                         <td class="td_room">${room}</td>
                         <td>
-                            <a href="${path}/clazz/info.action?clazz.id=${id}" class="label label-default" data-toggle="tooltip" data-placement="top" title="查看班级">
+                            <a class="infoBtn label label-default" href="${path}/clazz/info.action?clazz.id=${id}" data-toggle="tooltip" data-placement="top" title="查看班级">
                                 <span class="class_detail_btn glyphicon glyphicon-eye-open"></span>
                             </a>
                             &nbsp;

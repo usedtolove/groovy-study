@@ -12,18 +12,17 @@ import spock.lang.Stepwise
  * Created by hjl on 2015/8/19.
  */
 @Stepwise
-class Sit01ClazzList extends GebReportingSpec{
+class Sit01ClazzListToAdd extends GebReportingSpec{
 
-    def "测试用例-班级列表"() {
-        given: "访问班级列表"
+    def "测试用例-班级列表to新增班级"() {
+        given: "班级列表页面"
         to ClazzListPage
 
         when: "点击新增按钮"
         clazzAddBtn.click();
 
-        then: "看到错误信息"
+        then: "新增班级页面"
         at ClazzAddPage
-
     }
 
 }
