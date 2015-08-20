@@ -109,7 +109,7 @@ task itTomcatRun(type: com.bmuschko.gradle.tomcat.tasks.TomcatRun) {
 
 //单元测试
 test {
-    include '**/Test*'
+//    include '**/Test*'
 //    include '**/Sit*'
     testLogging {
         events "passed","failed","standardError"
@@ -119,8 +119,9 @@ test {
 //用火狐浏览器集成测试
 task sit (type: Test) {
 //    dependsOn 'itTomcatRun'
-    exclude '**/Test*'
-    include '**/Sit*'
+//    exclude '**/Test*'
+//    include '**/Sit*'
+    include '**/*Suite'
 
     testLogging {
         events "passed","failed","standardError"
@@ -151,6 +152,7 @@ dependencies {
     compile 'org.apache.ant:ant:1.9.4'
     compile 'org.codehaus.groovy:groovy-all:2.4.4'
     compile 'org.slf4j:slf4j-log4j12:1.7.12'
+    compile "org.fluttercode.datafactory:datafactory:0.8"
     providedCompile "javax.servlet:javax.servlet-api:3.1.0"
     testCompile 'junit:junit:4.12'
     testCompile "javax.servlet.jsp:jsp-api:2.2"

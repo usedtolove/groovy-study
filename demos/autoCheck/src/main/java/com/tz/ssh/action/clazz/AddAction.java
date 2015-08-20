@@ -25,7 +25,7 @@ public class AddAction extends ActionSupport {
         if(StringUtils.isNotBlank(clazz.getName())){
             Clazz c = clazzDao.findByName(clazz.getName());
             if(c != null){
-                addFieldError("clazz.name", "same name exist!");
+                addFieldError("clazz.name", "已存在同样班级名");
             }
         }
     }
@@ -34,25 +34,25 @@ public class AddAction extends ActionSupport {
         requiredFields = {
                 @RequiredFieldValidator(type = ValidatorType.SIMPLE,
                         fieldName = "clazz.openDate",
-                        message = "openDate can not be blank!")
+                        message = "开班日期不能为空")
         },
         requiredStrings = {
                 @RequiredStringValidator(type = ValidatorType.SIMPLE,
                         fieldName = "clazz.name",
-                        message = "name can not be blank!"),
+                        message = "班级名不能为空"),
                 @RequiredStringValidator(type = ValidatorType.SIMPLE,
                         fieldName = "clazz.room",
-                        message = "room can not be blank!")
+                        message = "所在教室不能为空")
         },
         stringLengthFields = {
                 @StringLengthFieldValidator(type = ValidatorType.SIMPLE,
-                        trim = true, minLength = "1", maxLength = "20",
+                        trim = true, minLength = "6", maxLength = "20",
                         fieldName = "clazz.name",
-                        message = "name must 1~20"),
+                        message = "班级名长度必须在6~20之间"),
                 @StringLengthFieldValidator(type = ValidatorType.SIMPLE,
                         trim = true, minLength = "1", maxLength = "10",
                         fieldName = "clazz.room",
-                        message = "room must 1~10")
+                        message = "所在教室长度必须在1~10之间")
         }
     )
     @Override

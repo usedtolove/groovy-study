@@ -18,10 +18,12 @@
             $('#open_date').datetimepicker();
         });
     </script>
+    <style type="text/css">
+        .errorMessage{list-style: none;}
+    </style>
 </head>
 <body>
-<%--<s:debug/>--%>
-<s:fielderror/>
+
 <div class="container-fluid">
     <div class="col-sm-9 col-md-10 main">
             <h1 class="page-header">新增班级</h1>
@@ -31,17 +33,26 @@
                     <div class="col-md-3">
                         <input id="class_name" name="clazz.name" value="<s:property value='clazz.name'/>" type="text" class="form-control" placeholder="JSD1404"/>
                     </div>
+                    <div class="col-md-5">
+                        <label class="control-label alert-danger" id="class_name_err"><s:fielderror fieldName="clazz.name"/></label>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="open_date" class="col-md-offset-1 col-md-1 control-label">开班日期  <span style="color: red">*</span></label>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <input id="open_date" name="clazz.openDate" value="<s:property value='clazz.openDate'/>" type='text' class="form-control" data-date-format="YYYY-MM-DD" placeholder="2015-01-27"/>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="control-label alert-danger" id="open_date_err"><s:fielderror fieldName="clazz.openDate"/></label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="class_room" class="col-md-offset-1 col-md-1 control-label">所在教室  <span style="color: red">*</span></label>
                     <div class="col-md-3">
                         <input id="class_room" name="clazz.room" value="<s:property value='clazz.room'/>" type="text" class="form-control" placeholder="F"/>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="control-label alert-danger" id="class_room_err"><s:fielderror fieldName="clazz.room"/></label>
                     </div>
                 </div>
                 <div class="col-md-offset-2">

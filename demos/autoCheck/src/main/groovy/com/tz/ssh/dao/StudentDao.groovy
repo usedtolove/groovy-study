@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param
  */
 interface StudentDao extends CrudRepository<Student, Integer> {
 
-    @Query("from Student s where s.clazz.id =:id")
-    List<Student> findByClazzId(@Param("id") int id);
+    @Query("from Student s where s.clazz.id = ?1")
+    List<Student> findByClazzId(int id);
 
 }

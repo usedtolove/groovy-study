@@ -2,6 +2,7 @@ package com.tz.ssh.dao
 
 import com.tz.ssh.AppConfig
 import com.tz.ssh.entity.Clazz
+import com.tz.ssh.util.DataPool
 import org.junit.Assert
 import org.junit.FixMethodOrder
 import org.junit.Test
@@ -19,7 +20,7 @@ import javax.transaction.Transactional
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AppConfig.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@Transactional
+//@Transactional
 class TestClazzDao {
 
     @Autowired
@@ -28,7 +29,7 @@ class TestClazzDao {
     @Test
     void test1FindAllClazz(){
         Assert.assertNotNull(clazzDao);
-        System.out.println(clazzDao.findAll());
+        System.out.println(clazzDao.findAllByCreationTime());
     }
 
     @Test
@@ -38,6 +39,13 @@ class TestClazzDao {
         clazz.setOpenDate(new Date());
         clazz.setRoom("A");
         clazzDao.save(clazz);
+    }
+
+    @Test
+    void test3SaveBatch(){
+        DataPool.dataPool.each {clazz->
+            clazzDao.save(clazz)
+        }
     }
 
 }

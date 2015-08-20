@@ -2,13 +2,7 @@ package com.tz.ssh.entity
 
 import groovy.transform.ToString
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.Table
-import javax.persistence.Temporal
-import javax.persistence.TemporalType
+import javax.persistence.*
 
 /**
  * Created by hjl on 2015/8/14.
@@ -31,5 +25,23 @@ class Clazz {
 
     @Column(name = "c_room", nullable = false, length = 10)
     String room;
+
+    @Column(name = "c_creation", nullable = false)
+    Date creationTime;
+
+    @PrePersist
+    void prePersist() {
+        creationTime = new Date()
+    }
+
+    /*@Column(name = "c_mdf_time", nullable = false)
+    Date modificationTime
+
+    @PreUpdate
+    void preUpdate() {
+        modificationTime = new Date()
+    }*/
+
+
 
 }
