@@ -22,6 +22,11 @@ class ClazzListPage extends Page {
         lastRowName {$("tr:last-child .td_name").text()}
         lastRowOpenDate {$("tr:last-child .td_open_date").text()}
         lastRowRoom {$("tr:last-child .td_room").text()}
+
+        //删除按钮不一定存在，设置required:false
+        deleteBtn (required: false) {$(".deleteBtn", 0)}
+        deleteConfirmModal {$("#deleteConfirmModal")}
+        deleteConfirmBtn {$("#deleteConfirmBtn")}
     }
 
     //页面检查点

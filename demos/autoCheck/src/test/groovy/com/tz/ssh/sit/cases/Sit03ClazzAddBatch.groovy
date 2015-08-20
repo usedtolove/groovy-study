@@ -4,6 +4,7 @@ import com.tz.ssh.sit.pages.ClazzAddPage
 import com.tz.ssh.sit.pages.ClazzListPage
 import com.tz.ssh.util.DataPool
 import geb.spock.GebReportingSpec
+import spock.lang.Stepwise
 
 import java.text.SimpleDateFormat
 
@@ -11,6 +12,7 @@ import java.text.SimpleDateFormat
  * 班级列表 数据池批量保存
  * Created by hjl on 2015/8/19.
  */
+@Stepwise
 class Sit03ClazzAddBatch extends GebReportingSpec{
 
     def "测试用例-新增班级-数据池批量保存"() {

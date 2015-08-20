@@ -13,7 +13,7 @@ class DataPool {
         def map = new HashMap<String,Clazz>()
         def df = new DataFactory();
 
-        def max = 10
+        def max = 6
         def minDate = new Date(2013-1900,1,1)
         def maxDate = new Date(2015-1900,7,31)
         (1..max).each {i->

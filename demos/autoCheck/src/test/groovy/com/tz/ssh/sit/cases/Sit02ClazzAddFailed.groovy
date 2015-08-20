@@ -3,11 +3,17 @@ package com.tz.ssh.sit.cases
 import com.tz.ssh.sit.pages.ClazzAddPage
 import com.tz.ssh.sit.pages.ClazzListPage
 import geb.spock.GebReportingSpec
+import spock.lang.Stepwise
 
 /**
+ * 测试用例：
+ * 模拟用户在新增班级页面，
+ * 输入各种无效的数据，
+ * 看到相应的错误提示信息。
  * Created by hjl on 2015/8/19.
  */
-class Sit02ClazzAddFaild extends GebReportingSpec{
+@Stepwise
+class Sit02ClazzAddFailed extends GebReportingSpec{
 
     def "测试用例-新增班级-非空验证"() {
         given: "进入新增班级页面"
