@@ -18,3 +18,6 @@
 
 ### 2. **convertApe2FlacByFFmpeg**.
 这是一个段音频转码脚本，自己平时在ubuntu上听无损音乐转码使用的，目前只能命令行执行，后期有时间可以做成GUI界面。
+
+### 3. groovy系列代码.
+计划中的一个系列教程代码，演示groovy如何替代JavaSE,数据库编程,JavaWeb等方面的示例。
