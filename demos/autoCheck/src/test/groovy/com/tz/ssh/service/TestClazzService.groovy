@@ -1,6 +1,7 @@
 package com.tz.ssh.service
 
 import com.tz.ssh.AppConfig
+import com.tz.ssh.TestConfig
 import org.junit.FixMethodOrder
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -14,7 +15,7 @@ import org.springframework.util.Assert
  * Created by hjl on 2015/8/19.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = AppConfig.class)
+@SpringApplicationConfiguration(classes = TestConfig.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class TestClazzService {
 

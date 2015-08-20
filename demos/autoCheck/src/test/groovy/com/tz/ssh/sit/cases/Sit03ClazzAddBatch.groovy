@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat
  * 班级列表 数据池批量保存
  * Created by hjl on 2015/8/19.
  */
-class SitClazzAddBatch extends GebReportingSpec{
+class Sit03ClazzAddBatch extends GebReportingSpec{
 
     def "测试用例-新增班级-数据池批量保存"() {
         def dateFormat = new SimpleDateFormat('yyyy-MM-dd')

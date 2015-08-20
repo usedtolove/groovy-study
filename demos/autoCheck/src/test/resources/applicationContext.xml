@@ -5,6 +5,6 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--告诉spring去加载AppConfig配置信息类-->
-    <bean class="com.tz.ssh.AppConfig"/>
+    <bean class="com.tz.ssh.TestConfig"/>
 
 </beans>

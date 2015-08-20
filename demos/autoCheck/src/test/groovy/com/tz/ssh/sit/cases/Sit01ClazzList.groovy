@@ -7,7 +7,7 @@ import geb.spock.GebReportingSpec
 /**
  * Created by hjl on 2015/8/19.
  */
-class SitClazzList extends GebReportingSpec{
+class Sit01ClazzList extends GebReportingSpec{
 
     def "测试用例-班级列表"() {
         given: "访问班级列表"

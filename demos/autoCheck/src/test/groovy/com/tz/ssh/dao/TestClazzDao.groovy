@@ -1,6 +1,6 @@
 package com.tz.ssh.dao
 
-import com.tz.ssh.AppConfig
+import com.tz.ssh.TestConfig
 import com.tz.ssh.entity.Clazz
 import com.tz.ssh.util.DataPool
 import org.junit.Assert
@@ -12,13 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.SpringApplicationConfiguration
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 
-import javax.transaction.Transactional
-
 /**
  * Created by hjl on 2015/8/19.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = AppConfig.class)
+@SpringApplicationConfiguration(classes = TestConfig.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 //@Transactional
 class TestClazzDao {

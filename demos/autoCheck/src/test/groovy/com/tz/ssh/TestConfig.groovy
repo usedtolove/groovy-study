@@ -7,12 +7,15 @@ import org.springframework.context.annotation.PropertySource
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 /**
- * Created by hjl on 2015/8/14.
+ * Created by hjl on 2015/8/20.
  */
 @Configuration
-@ComponentScan
+@ComponentScan(['com.tz.ssh.dao',
+                'com.tz.ssh.entity',
+                'com.tz.ssh.service'
+                ])
 @EnableAutoConfiguration
-@EnableJpaRepositories //enable spring data
-@PropertySource("classpath:app.properties")
-class AppConfig {
+@EnableJpaRepositories
+@PropertySource("classpath:test.properties")
+class TestConfig {
 }

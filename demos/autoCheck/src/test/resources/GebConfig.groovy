@@ -13,11 +13,14 @@ waiting {
 
 // default is to use firefox
 if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-	println "Windows OS";
+	println "Geb for Windows";
 	FirefoxProfile fxProfile = new ProfilesIni().getProfile("default");
 	driver = { new FirefoxDriver(fxProfile) }
+}else if(Os.isFamily(Os.FAMILY_UNIX)){
+	println "Geb for FAMILY_UNIX"
+	driver = { new FirefoxDriver() }
 }else{
-	println "Other OS"
+	println "Geb for Other OS"
 	driver = { new FirefoxDriver() }
 }
 

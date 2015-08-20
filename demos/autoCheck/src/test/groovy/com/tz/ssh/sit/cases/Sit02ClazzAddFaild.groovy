@@ -7,7 +7,7 @@ import geb.spock.GebReportingSpec
 /**
  * Created by hjl on 2015/8/19.
  */
-class SitClazzAddFaild extends GebReportingSpec{
+class Sit02ClazzAddFaild extends GebReportingSpec{
 
     def "测试用例-新增班级-非空验证"() {
         given: "进入新增班级页面"

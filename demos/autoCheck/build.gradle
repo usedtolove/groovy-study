@@ -109,7 +109,7 @@ task itTomcatRun(type: com.bmuschko.gradle.tomcat.tasks.TomcatRun) {
 
 //单元测试
 test {
-//    include '**/Test*'
+    include '**/Test*'
 //    include '**/Sit*'
     testLogging {
         events "passed","failed","standardError"
@@ -118,10 +118,12 @@ test {
 
 //用火狐浏览器集成测试
 task sit (type: Test) {
+    group 'custom'
+    description 'geb automation integration test'
 //    dependsOn 'itTomcatRun'
 //    exclude '**/Test*'
-//    include '**/Sit*'
-    include '**/*Suite'
+    include '**/Sit*'
+//    include '**/*Suite'
 
     testLogging {
         events "passed","failed","standardError"

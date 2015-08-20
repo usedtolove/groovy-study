@@ -10,8 +10,9 @@ import org.fluttercode.datafactory.impl.DataFactory
 class DataPool {
 
     def static getDataPool(){
+        def map = new HashMap<String,Clazz>()
         def df = new DataFactory();
-        def list = new ArrayList()
+
         def max = 10
         def minDate = new Date(2013-1900,1,1)
         def maxDate = new Date(2015-1900,7,31)
@@ -21,9 +22,11 @@ class DataPool {
             calendar.setTime(df.getDateBetween(minDate, maxDate))
             int year = calendar.get(Calendar.YEAR)
             int month = calendar.get(Calendar.MONTH) + 1
-            list.add(new Clazz(name:'JSD-'+year+month, openDate:calendar.time, room:'room-'+df.getRandomChars(1,6)))
+            Clazz clazz = new Clazz(name:'JSD-'+year+month, openDate:calendar.time, room:'room-'+df.getRandomChars(1,6))
+            map.put(clazz.name, clazz)
         }
-        return list
+
+        return new ArrayList(map.values());
     }
 
 }
