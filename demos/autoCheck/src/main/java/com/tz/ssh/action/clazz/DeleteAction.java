@@ -2,11 +2,14 @@ package com.tz.ssh.action.clazz;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.tz.ssh.dao.ClazzDao;
+import com.tz.ssh.dao.StudentDao;
+import com.tz.ssh.entity.Clazz;
+import com.tz.ssh.entity.Student;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Created by hjl on 2015/8/16.
@@ -18,6 +21,8 @@ public class DeleteAction extends ActionSupport {
 
     @Autowired
     private ClazzDao clazzDao;
+    @Autowired
+    private StudentDao studentDao;
 
     private int id;
 
@@ -25,7 +30,16 @@ public class DeleteAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        clazzDao.delete(id);
+        List<Student> studentList = studentDao.findByClazzId(id);
+        if(studentList != null && studentList.size() > 0){
+            for(Student stu :studentList){
+                studentDao.delete(stu);
+            }
+        }
+        Clazz clazz = clazzDao.findOne(id);
+        if(clazz != null){
+            clazzDao.delete(id);
+        }
         result = true;
         return SUCCESS;
     }
