@@ -5,3 +5,13 @@
 .my-red-font {
     color: red;
 }
+
+.my-rect-yellow {
+    border-radius: 20px;
+    background-color: yellow;
+}
+
+.my-rect-green {
+    border-radius: 20px;
+    background-color: green;
+}

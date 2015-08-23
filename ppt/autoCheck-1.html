@@ -15,6 +15,9 @@
     <!--<link rel="stylesheet" href="node_modules/reveal.js/css/theme/serif.css" id="theme">-->
     <link rel="stylesheet" href="node_modules/reveal.js/css/theme/sky.css" id="theme">
     <link rel="stylesheet" href="css/ppt.css">
+    <link rel="stylesheet" href="css/arrows.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
     <!-- Printing and PDF exports -->
@@ -204,14 +207,16 @@
             <section>
                 <h2>演示环节</h2>
                 <ol>
-                    <li>访问项目</li>
-                    <li>手动测试</li>
-                    <li>自动化测试</li>
+                    <li>项目介绍</li>
+                    <li>测试计划</li>
+                    <li>检查点</li>
+                    <li>手动测试vs自动化测试</li>
                 </ol>
             </section>
             <section>
-                <h3>访问项目</h3>
+                <h3>项目介绍</h3>
                 <ul>
+                    <li>需求简介</li>
                     <li>手动编译部署
                         <br/>
                         要求环境: jdk, groovy, gradle
@@ -225,12 +230,50 @@
                 </ul>
             </section>
             <section>
-                <h3>手动测试</h3>
-                <ul>
-                    <li>上机题</li>
-                    <li>测试计划</li>
-                    <li>进行测试</li>
-                </ul>
+                <h3>测试计划</h3>
+                <p>需补充内容...</p>
+            </section>
+            <section>
+                <h3>检查点</h3>
+                <p>需补充内容...</p>
+            </section>
+            <section style="text-align: center;">
+                <h3>手动测试 vs 自动测试</h3>
+                <div class="row">
+                    <div class="col-md-2">
+                        手动测试:
+                    </div>
+                    <div class="col-md-2">
+                        <span class="my-rect-green" style="font-size: 24px;padding: 20px;">测试计划</span>
+                    </div>
+                    <span class="arrow arrow-right col-md-1"></span>
+                    <div class="col-md-2">
+                        <span class="my-rect-yellow" style="font-size: 24px;padding: 20px;">手动测试</span>
+                    </div>
+                    <span class="arrow arrow-right col-md-1"></span>
+                    <div class="col-md-3">
+                        <span class="my-rect-yellow" style="font-size: 24px;padding: 20px;">手动整理测试报告</span>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="row fragment">
+                    <div class="col-md-2">
+                        自动测试:
+                    </div>
+                    <div class="col-md-2">
+                        <span class="my-rect-green" style="font-size: 24px;padding: 20px;">测试计划</span>
+                    </div>
+                    <span class="arrow arrow-right col-md-1"></span>
+                    <div class="col-md-2">
+                        <span class="my-rect-green" style="font-size: 24px;padding: 20px;">自动测试</span>
+                    </div>
+                    <span class="arrow arrow-right col-md-1"></span>
+                    <div class="col-md-3">
+                        <span class="my-rect-green" style="font-size: 24px;padding: 20px;">自动产生测试报告</span>
+                    </div>
+                </div>
             </section>
             <section>
                 <h3>自动化测试</h3>
@@ -280,6 +323,8 @@
 
 <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
 <script src="node_modules/reveal.js/js/reveal.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
 <script>
     // Full list of configuration options available at:

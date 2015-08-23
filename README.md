@@ -12,6 +12,7 @@
 * 测试浏览器: 已在Firefox 39+ 版本中测试通过
 * 操作视频: (制作中...)
 * 项目在线预览:<a href="http://182.92.83.72:8080/autoCheck" target="_blank">点击访问</a>  
+* 演示PPT路径:<a href="https://github.com/usedtolove/groovy-study/tree/master/ppt" target="_blank">点击访问</a>  
 * 完成进度:  
 
 > 2015-8-20.  
@@ -19,6 +20,8 @@
 > 性能测试: 实现中(公司局域网服务器vs阿里云空间)，敬请期待.  
 > 2015-8-22.  
 > 将演示项目部署到阿里云(ECS服务器)  
+> 2015-8-23.  
+> 整理演示所需PPT  
 ## 感谢苏大陈建明教授平日的指导和带给本人软件测试方面的启发!
 
 ### 2. **convertApe2FlacByFFmpeg**.
