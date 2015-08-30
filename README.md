@@ -8,7 +8,7 @@
 <a href="http://gradle.org/whygradle-build-automation/" target="_blank">gradle 2.x</a>, 
 <a href="https://www.atlassian.com/git/" target="_blank">git</a>, 
 * 自动化测试工具: <a href="http://www.gebish.org" target="_blank">geb官网</a>  
-* 测试计划: (编辑中...)
+* 测试计划:<a href="https://raw.githubusercontent.com/usedtolove/groovy-study/master/docs/%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%EF%BC%88GBT%209386-2008%EF%BC%89.doc" target="_blank">点击访问</a>  
 * 测试浏览器: 已在Firefox 39+ 版本中测试通过
 * 操作视频: (制作中...)
 * 项目在线预览:<a href="http://182.92.83.72:8080/autoCheck" target="_blank">点击访问</a>  
@@ -22,6 +22,9 @@
 > 将演示项目部署到阿里云(ECS服务器)  
 > 2015-8-23.  
 > 整理演示所需PPT  
+> 2015-8-31.  
+> 创建测试计划doc文件  
+
 ## 感谢苏大陈建明教授平日的指导和带给本人软件测试方面的启发!
 
 ### 2. **convertApe2FlacByFFmpeg**.
