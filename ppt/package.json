@@ -1,0 +1,12 @@
+{
+  "name": "ppt-for-autoCheck",
+  "version": "1.0.0",
+  "description": "ppt for autoCheck demo",
+  "main": "index.js",
+  "dependencies": {
+    "reveal.js": "^3.1.0"
+  },
+  "devDependencies": {},
+  "author": "178502261@qq.com",
+  "license": ""
+}
