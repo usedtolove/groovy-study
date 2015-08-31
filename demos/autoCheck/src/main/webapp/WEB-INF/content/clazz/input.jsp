@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>新增班级</title>
     <link rel="stylesheet" href="${path}/prototype/bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="${path}/prototype/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="${path}/prototype/bower_components/eonasdan-bootstrap-datetimepicker/mybuild/css/bootstrap-datetimepicker.css" />
 
     <script type="text/javascript" src="${path}/prototype/bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="${path}/prototype/bower_components/moment/min/moment.min.js"></script>
     <script type="text/javascript" src="${path}/prototype/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="${path}/prototype/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="${path}/prototype/bower_components/eonasdan-bootstrap-datetimepicker/mybuild/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $('#open_date').datetimepicker();
