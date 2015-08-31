@@ -1,8 +1,6 @@
 package com.tz.ssh.sit
 
-import com.tz.ssh.entity.Clazz
 import com.tz.ssh.util.DataPool
-import org.fluttercode.datafactory.impl.DataFactory
 import org.junit.Test
 
 /**
