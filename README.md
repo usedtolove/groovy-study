@@ -11,7 +11,7 @@
 * 测试计划:<a href="https://raw.githubusercontent.com/usedtolove/groovy-study/master/docs/%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%EF%BC%88GBT%209386-2008%EF%BC%89.doc" target="_blank">点击访问</a>  
 * 测试浏览器: 已在Firefox 39+ 版本中测试通过
 * 操作视频: (制作中...)
-* 项目在线预览:<a href="http://182.92.83.72:8080/autoCheck" target="_blank">点击访问</a>  
+* 项目在线预览:<a href="http://139.196.26.217:8080/autoCheck" target="_blank">点击访问</a>  
 * 演示PPT路径:<a href="https://github.com/usedtolove/groovy-study/tree/master/ppt" target="_blank">点击访问</a>  
 * 完成进度:  
 
