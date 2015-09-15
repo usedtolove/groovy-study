@@ -1,0 +1,1 @@
+lazybones create http://dl.bintray.com/griffon/griffon-lazybones-templates/griffon-javafx-groovy-template-1.4.0.zip helloGriffon

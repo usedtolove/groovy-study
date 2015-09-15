@@ -24,4 +24,5 @@ if (Os.isFamily(Os.FAMILY_WINDOWS)) {
 	driver = { new FirefoxDriver() }
 }
 
-baseUrl = "http://localhost:18888/autoCheck/"
+//baseUrl = "http://localhost:18888/autoCheck/"
+baseUrl = "http://192.168.3.169:18888/ssh_exam_guhaixiang/"
