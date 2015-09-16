@@ -8,6 +8,7 @@ import griffon.transform.Threading;
 
 @ArtifactProviderFor(GriffonController.class)
 public class HelloGriffonController extends AbstractGriffonController {
+
     private HelloGriffonModel model;
 
     public void setModel(HelloGriffonModel model) {

@@ -9,15 +9,20 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script>
-        function demo(){
-            alert("ajax 代码写在这里...");
-        }
+        $(function () {
+            $(".delBtn").click(function () {
+                console.log("delBtn ...");
+                if(confirm("确认要删除此记录吗?")){
+                    alert("ajax删除记录...");
+                }
+            });
+        });
     </script>
 </head>
 <body>
 
 <!-- modal -->
-<div id="deleteConfirmModal" class="modal fade">
+<!--<div id="deleteConfirmModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -31,9 +36,9 @@
                 <button type="button" id="deleteCancelBtn" class="btn btn-default" data-dismiss="modal">取消</button>
                 <button type="button" id="deleteConfirmBtn" onclick="javascript:demo();" class="btn btn-primary" data-dismiss="modal">确定</button>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+    </div>
+</div>-->
 
 <div class="container-fluid">
         <div class="col-sm-9 col-md-10 main">
@@ -41,9 +46,9 @@
 
             <div class="row">
                 <div class="col-md-1">
-                    <button id="class_add_btn" type="button" class="btn btn-primary">
+                    <a id="class_add_btn" class="btn btn-primary" href="#">
                         <span class="glyphicon glyphicon-plus">&nbsp;添加班级</span>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -66,7 +71,8 @@
                             <span class="class_detail_btn glyphicon glyphicon-eye-open"></span>
                         </a>
                         &nbsp;
-                        <a class="label label-danger" data-toggle="modal" data-target="#deleteConfirmModal">
+                        <!--<a class="label label-danger delBtn" data-toggle="modal" data-target="#deleteConfirmModal">-->
+                        <a class="label label-danger delBtn">
                             <span class="class_delete_btn glyphicon glyphicon-trash"></span>
                         </a>
                     </td>
@@ -80,7 +86,7 @@
                             <span class="class_detail_btn glyphicon glyphicon-eye-open"></span>
                         </a>
                         &nbsp;
-                        <a class="label label-danger" data-toggle="tooltip" data-placement="top" title="删除班级">
+                        <a class="label label-danger delBtn">
                             <span class="class_delete_btn glyphicon glyphicon-trash"></span>
                         </a>
                     </td>
@@ -94,7 +100,7 @@
                             <span class="class_detail_btn glyphicon glyphicon-eye-open"></span>
                         </a>
                         &nbsp;
-                        <a class="label label-danger" data-toggle="tooltip" data-placement="top" title="删除班级">
+                        <a class="label label-danger delBtn">
                             <span class="class_delete_btn glyphicon glyphicon-trash"></span>
                         </a>
                     </td>

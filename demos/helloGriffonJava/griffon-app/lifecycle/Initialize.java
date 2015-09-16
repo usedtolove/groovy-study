@@ -12,5 +12,7 @@ public class Initialize extends AbstractLifecycleHandler {
 
     @Override
     public void execute() {
+        System.out.println("Initialize execute() run...");
+        System.out.println("UserData size:"+UserData.getData().size());
     }
 }

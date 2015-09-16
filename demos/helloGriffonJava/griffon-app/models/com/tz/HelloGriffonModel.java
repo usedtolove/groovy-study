@@ -7,10 +7,14 @@ import javafx.beans.property.SimpleStringProperty;
 import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonModel;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
 @ArtifactProviderFor(GriffonModel.class)
 public class HelloGriffonModel extends AbstractGriffonModel {
+
     private StringProperty clickCount;
+
+    private List<User> userList;
 
     @Nonnull
     public final StringProperty clickCountProperty() {

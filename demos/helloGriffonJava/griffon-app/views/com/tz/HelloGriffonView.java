@@ -7,6 +7,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -19,8 +20,11 @@ public class HelloGriffonView extends AbstractJavaFXGriffonView {
     private HelloGriffonController controller;
     private HelloGriffonModel model;
 
+//    @FXML
+//    private Label clickLabel;
+
     @FXML
-    private Label clickLabel;
+    private Button loadBtn;
 
     public void setController(HelloGriffonController controller) {
         this.controller = controller;
@@ -46,7 +50,7 @@ public class HelloGriffonView extends AbstractJavaFXGriffonView {
         scene.setFill(Color.WHITE);
 
         Node node = loadFromFXML();
-        model.clickCountProperty().bindBidirectional(clickLabel.textProperty());
+        //model.clickCountProperty().bindBidirectional(clickLabel.textProperty());
         if (node instanceof Parent) {
             scene.setRoot((Parent) node);
         } else {
