@@ -1,0 +1,4 @@
+1.javaFx helloWorld
+2.javaFx user curd demo (java + fxml)
+3.refactor to griffon and java
+4.refactor to griffon and groovy
