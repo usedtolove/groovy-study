@@ -24,4 +24,6 @@ if (Os.isFamily(Os.FAMILY_WINDOWS)) {
 	driver = { new FirefoxDriver() }
 }
 
-baseUrl = "http://localhost:18888/autoCheck/"
+baseUrl = System.getProperty("my.prop.project.url")
+baseNavigatorWaiting = true
+atCheckWaiting = true

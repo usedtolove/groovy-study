@@ -72,13 +72,16 @@ sourceSets {
 
 //tomcat启动参数
 tomcat {
-    httpPort = 18888
-    httpsPort = 18443
-    ajpPort = 18009
-    stopPort = 18081
+    httpPort = 8888
+    httpsPort = 8443
+    ajpPort = 8009
+    stopPort = 8081
 }
-tomcatRun.contextPath = '/autoCheck'
-tomcatRun.reloadable = false
+tomcatRun{
+    contextPath= 'autoCheck'
+    URIEncoding= 'UTF-8'
+    reloadable = false
+}
 
 //配置忽略的依赖
 configurations {
@@ -131,6 +134,7 @@ task sit (type: Test) {
 
     outputs.upToDateWhen { false }  // Always run tests
     systemProperty "geb.build.reportsDir", reporting.file("$projectDir/build/firefoxTest/geb")
+    systemProperty "my.prop.project.url", "http://localhost:$tomcat.httpPort/$tomcatRun.contextPath/"
 }
 
 //项目依赖

@@ -1,10 +1,10 @@
 /**
-无损音乐 ape格式==>flac格式 转码程序:
-使用之前
-1.先安装 ffmpeg，以及groovy环境
-2.找到需要转换的ape文件目录
-3.在目录下打开groovyConsole,导入这个源代码
-4.执行
+ * 无损音乐 ape格式==>flac格式 转码程序:
+ * 使用之前
+ * 1.先安装 ffmpeg，以及groovy环境
+ * 2.找到需要转换的ape文件目录
+ * 3.在目录下打开groovyConsole,导入这个源代码
+ * 4.执行
 */
 println "自定义转码程序开始执行"
 
