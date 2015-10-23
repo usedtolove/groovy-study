@@ -19,8 +19,6 @@ class Sit04ClazzInfo extends GebReportingSpec{
 
         then: "查看班级页面"
         at ClazzInfoPage
-
-
     }
 
 }
