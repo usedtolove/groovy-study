@@ -4,6 +4,9 @@
 *.iws
 **/.idea
 
+
+
+
 # Myeclipse #
 *.classpath
 *.project
@@ -25,7 +28,7 @@
 hs_err_pid*
 
 # bower #
-#**/bower_components
+**/bower_components
 #**/bower_components/**/src
 #**/bower_components/bootstrap/less
 #**/node_modules
