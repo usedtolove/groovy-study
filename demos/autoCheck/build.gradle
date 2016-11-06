@@ -10,8 +10,6 @@ defaultTasks 'clean', //清空各种临时文件
 //A Gradle plugin that provides Maven-like dependency management functionality
 buildscript {
     repositories {
-        mavenLocal()
-        maven{ url 'http://maven.oschina.net/content/groups/public/'}
         jcenter()
     }
     dependencies {
@@ -34,8 +32,7 @@ apply plugin: 'jacoco'
 //配置依赖下载仓库
 repositories {
     mavenLocal()
-    maven{ url 'http://maven.oschina.net/content/groups/public/'}
-    mavenCentral()
+    jcenter()
 }
 
 //设置编码
@@ -171,7 +168,8 @@ dependencies {
     }
     // If using JUnit, need to depend on geb-junit (3 or 4)
     testCompile "org.gebish:geb-junit4:0.10.0"
-    testCompile "org.seleniumhq.selenium:selenium-firefox-driver:2.47.1"
+//    testCompile "org.seleniumhq.selenium:selenium-firefox-driver:2.47.1"
+    testCompile "org.seleniumhq.selenium:selenium-firefox-driver:2.53.0"
 
     //tomcat中间件
     def tomcatVersion = '7.0.55'
