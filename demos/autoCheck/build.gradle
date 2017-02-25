@@ -2,7 +2,7 @@ group 'com.tz'
 version '1.0-SNAPSHOT'
 
 defaultTasks 'clean', //清空各种临时文件
-            'war', //打 war 包
+            // 'war', //打 war 包
             'test', //单元测试
             'itTomcatRun', //启动tomcat
             'sit' //集成测试
@@ -13,20 +13,20 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
+        // classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
         //and set VM options for debug usage : -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
-        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE"
+        // classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+        // classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE"
     }
 }
 
 //项目插件
 apply plugin: 'java'
-apply plugin: 'war'
+// apply plugin: 'war'
 apply plugin: 'groovy'
 apply plugin: 'maven'
-apply plugin: 'com.bmuschko.tomcat'
-apply plugin: 'spring-boot'
+// apply plugin: 'com.bmuschko.tomcat'
+// apply plugin: 'spring-boot'
 apply plugin: 'jacoco'
 
 //配置依赖下载仓库
@@ -68,17 +68,17 @@ sourceSets {
 }
 
 //tomcat启动参数
-tomcat {
-    httpPort = 8888
-    httpsPort = 8443
-    ajpPort = 8009
-    stopPort = 8081
-}
-tomcatRun{
-    contextPath= 'autoCheck'
-    URIEncoding= 'UTF-8'
-    reloadable = false
-}
+// tomcat {
+//     httpPort = 8888
+//     httpsPort = 8443
+//     ajpPort = 8009
+//     stopPort = 8081
+// }
+// tomcatRun{
+//     contextPath= 'autoCheck'
+//     URIEncoding= 'UTF-8'
+//     reloadable = false
+// }
 
 //配置忽略的依赖
 configurations {
@@ -103,9 +103,9 @@ task generatePom << {
 }
 
 //task -- 启动 Tomcat
-task itTomcatRun(type: com.bmuschko.gradle.tomcat.tasks.TomcatRun) {
-    daemon = true
-}
+// task itTomcatRun(type: com.bmuschko.gradle.tomcat.tasks.TomcatRun) {
+//     daemon = true
+// }
 
 //单元测试
 test {
@@ -117,22 +117,22 @@ test {
 }
 
 //用火狐浏览器集成测试
-task sit (type: Test) {
-    group 'custom'
-    description 'geb automation integration test'
-//    dependsOn 'itTomcatRun'
-//    exclude '**/Test*'
-    include '**/Sit*'
-//    include '**/*Suite'
+// task sit (type: Test) {
+//     group 'custom'
+//     description 'geb automation integration test'
+// //    dependsOn 'itTomcatRun'
+// //    exclude '**/Test*'
+//     include '**/Sit*'
+// //    include '**/*Suite'
 
-    testLogging {
-        events "passed","failed","standardError"
-    }
+//     testLogging {
+//         events "passed","failed","standardError"
+//     }
 
-    outputs.upToDateWhen { false }  // Always run tests
-    systemProperty "geb.build.reportsDir", reporting.file("$projectDir/build/firefoxTest/geb")
-    systemProperty "my.prop.project.url", "http://localhost:$tomcat.httpPort/$tomcatRun.contextPath/"
-}
+//     outputs.upToDateWhen { false }  // Always run tests
+//     systemProperty "geb.build.reportsDir", reporting.file("$projectDir/build/firefoxTest/geb")
+//     systemProperty "my.prop.project.url", "http://localhost:$tomcat.httpPort/$tomcatRun.contextPath/"
+// }
 
 //项目依赖
 dependencies {
@@ -156,7 +156,7 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.4'
     compile 'org.slf4j:slf4j-log4j12:1.7.12'
     compile "org.fluttercode.datafactory:datafactory:0.8"
-    providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "javax.servlet:javax.servlet-api:3.1.0"
     testCompile 'junit:junit:4.12'
     testCompile "javax.servlet.jsp:jsp-api:2.2"
 
@@ -174,7 +174,7 @@ dependencies {
     //tomcat中间件
     def tomcatVersion = '7.0.55'
     testRuntime "org.apache.tomcat.embed:tomcat-embed-el:$tomcatVersion"
-    tomcat "org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion",
-            "org.apache.tomcat.embed:tomcat-embed-logging-juli:$tomcatVersion",
-            "org.apache.tomcat.embed:tomcat-embed-jasper:$tomcatVersion"
+    // tomcat "org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion",
+    //         "org.apache.tomcat.embed:tomcat-embed-logging-juli:$tomcatVersion",
+    //         "org.apache.tomcat.embed:tomcat-embed-jasper:$tomcatVersion"
 }
